@@ -13,7 +13,7 @@
 
 // Global clock for scheduling
 volatile uint32_t ms_ticks = 0;            
-const uint32_t AUTO_FEEDING_INTERVAL = 600000; // Trigger every 10 minutes
+const uint32_t AUTO_FEEDING_INTERVAL = 60000; // Trigger every 1 minutes
 
 // Function Prototypes
 void TWI_Init(void); void TWI_Start(void); void TWI_Stop(void);
@@ -160,7 +160,7 @@ void Trigger_Feeding(void) {
     LCD_Print("FEEDING...      ");
     
     OCR1A = 4000; // Open dispenser
-    _delay_ms(1500);
+    _delay_ms(3000);
     OCR1A = 2000; // Close dispenser
     
     LCD_Send_Command(0xC0);
