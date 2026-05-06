@@ -160,7 +160,7 @@ void Trigger_Feeding(void) {
     LCD_Print("FEEDING...      ");
     
     OCR1A = 4000; // Open dispenser
-    _delay_ms(3000);
+    _delay_ms(1500);
     OCR1A = 2000; // Close dispenser
     
     LCD_Send_Command(0xC0);
